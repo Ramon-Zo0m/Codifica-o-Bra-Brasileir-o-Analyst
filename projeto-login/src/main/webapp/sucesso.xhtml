@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+<h:head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sucesso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/css/style.css" />
+    <h:outputStylesheet name="css/style.css" />
+</h:head>
+<h:body>
+    <div class="login-card">
+        <div class="success-icon-container">
+            <svg class="success-icon" viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+        </div>
+        <h2 class="success-title">Autenticado com Sucesso!</h2>
+        <p class="success-subtitle">Bem-vindo ao Brasileirão Analyst. Seu acesso foi validado no sistema.</p>
+        <h:link value="VOLTAR AO LOGIN" outcome="login.xhtml" styleClass="btn-back" />
+    </div>
+</h:body>
+</html>

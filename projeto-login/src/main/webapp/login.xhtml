@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:pt="jakarta.faces.passthrough">
+<h:head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/css/style.css" />
+    <h:outputStylesheet name="css/style.css" />
+</h:head>
+<h:body>
+    <div class="login-card">
+        <div class="avatar-container">
+            <svg class="avatar-icon" viewBox="0 0 24 24">
+                <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+            </svg>
+        </div>
+
+        <h:messages id="mensagens" styleClass="error-messages" />
+
+        <h:form id="formLogin">
+            <div class="input-group">
+                <svg class="input-icon" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                <h:inputText id="login" value="#{loginBean.login}" required="true" 
+                             requiredMessage="Informe o e-mail ou nome de usuário."
+                             styleClass="input-field"
+                             pt:placeholder="Email ID" />
+            </div>
+
+            <div class="input-group">
+                <svg class="input-icon" viewBox="0 0 24 24">
+                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                </svg>
+                <h:inputSecret id="senha" value="#{loginBean.senha}" required="true" 
+                               requiredMessage="Informe a senha."
+                               styleClass="input-field"
+                               pt:placeholder="Password" />
+            </div>
+
+            <div class="form-options">
+                <label class="remember-me">
+                    <input type="checkbox" checked="checked" />
+                    <span>Remember me</span>
+                </label>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+
+            <h:commandButton id="btnEntrar" value="LOGIN" action="#{loginBean.entrar}" styleClass="btn-login" />
+        </h:form>
+    </div>
+</h:body>
+</html>
